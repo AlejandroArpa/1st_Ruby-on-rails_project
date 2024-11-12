@@ -1,0 +1,23 @@
+<%# < style="color: green"><%= notice %>
+
+<% content_for :title, "Events" %>
+
+<h1>Events</h1>
+
+<div id="events" class="grid grid-cols-4 gap-4">
+  <% @events.each do |event| %>
+    <%= link_to event_path(event), class: "group block mx-auto rounded-lg p-6 bg-white ring-1 ring-slate-900/5 shadow-lg space-y-3 hover:bg-sky-500 hover:ring-sky-500 w-[200px]" do %>
+      <%= render event %>
+    <% end %>
+  <% end %>
+</div>
+
+
+<h2>Concert events</h2>
+<div class="grid grid-cols-4 gap-4">
+  <% @concert_events.each do |event| %>
+    <%= link_to event_path(event), class: "group block max-w-xs mx-auto rounded-lg p-6 bg-white ring-1 ring-slate-900/5 shadow-lg space-y-3 hover:bg-sky-500 hover:ring-sky-500" do %>
+      <%= render event %>
+    <% end %>
+  <% end %>
+</div>
